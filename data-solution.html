@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<html>
+
+<!---header and Nav Bar--->
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Blacklemur Innovations</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,300|Open+Sans:400,600,700,300' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
+  <link rel="stylesheet" type="text/css" href="css/animate.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.css">
+  <link rel="stylesheet" type="text/css" href="css/data-solution.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/scss" href="style.scss">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link rel="icon" type="images/blemurs.png" href="images/blemurs.png">
+  </head>
+<header>
+  <!---Header-->
+  
+        <!-- Navigation -->
+        <section>
+          <nav class="navbar navbar-expand-lg navbar-light bg-light top-fixed ">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="collapsingNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="collapsingNavbar">
+            <nav class="nav nav-tabs navbar fixed-top navbar-expand-md navbar-new-bottom p-3 mb-2 bg-white text-dark" style="height:15%;">
+                <div class="navbar-collapse collapse" id="collapsingNavbar">
+                 
+                        <a href="Home.html"><img am-TopLogo alt="Blacklemur"  src="images/flying-logo.png" class="img-responsive logo."></a>
+                        <div class="collapse navbar-collapse navbar-menubuilder">
+                    <ul class=" nav navbar-nav nav justify-content-center navbar-nav mr-auto mt-2 mt-lg-0 navbar-nav w-100 justify-content-center px-3" style="color:white">
+                       
+                        <li class="nav-item active">
+                            <a class="nav-link" href="Home.html" style="color:#000;">HOME</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="About-us.html" style="color:#000;">ABOUT US</a></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="website-design.html" style="color:#000;">WEBSITE DESIGN</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="imagination-design.html" style="color:#000;">IMAGINATION DESIGN</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="data-solution.html" style="color:#000;">DATA SOLUTION</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="recent-work.html" style="color:#000;">RECENT WORK</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="get-in-touch.html" style="color:#000;">GET IN TOUCH</a>
+                        </li>
+                    </ul>
+                </div>
+                </nav>
+            </nav> 
+        </section>
+    </header> 
+
+<div id="particles">
+    <div id="DataS">
+      <h1>DATA SOLUTION</h1>
+      <p style="color:white;">The data solution end of the Blacklemur Innovations provides data services ranging from data gathering to data security.</p>
+      
+    </div>
+  </div>
+  <script>
+  /*!
+ * Particleground
+ *
+ */
+ document.addEventListener('DOMContentLoaded', function () {
+  particleground(document.getElementById('particles'), {
+    dotColor: '#5cbdaa',
+    lineColor: '#5cbdaa'
+  });
+  var intro = document.getElementById('intro');
+  intro.style.marginTop = - intro.offsetHeight / 2 + 'px';
+}, false);
+
+
+
+;(function(window, document) {
+  "use strict";
+  var pluginName = 'particleground';
+
+  function extend(out) {
+    out = out || {};
+    for (var i = 1; i < arguments.length; i++) {
+      var obj = arguments[i];
+      if (!obj) continue;
+      for (var key in obj) {
+        if (obj.hasOwnProperty(key)) {
+          if (typeof obj[key] === 'object')
+            deepExtend(out[key], obj[key]);
+          else
+            out[key] = obj[key];
+        }
+      }
+    }
+    return out;
+  };
+
+  var $ = window.jQuery;
+
+  function Plugin(element, options) {
+    var canvasSupport = !!document.createElement('canvas').getContext;
+    var canvas;
+    var ctx;
+    var particles = [];
+    var raf;
+    var mouseX = 0;
+    var mouseY = 0;
+    var winW;
+    var winH;
+    var desktop = !navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry|BB10|mobi|tablet|opera mini|nexus 7)/i);
+    var orientationSupport = !!window.DeviceOrientationEvent;
+    var tiltX = 0;
+    var pointerX;
+    var pointerY;
+    var tiltY = 0;
+    var paused = false;
+
+    options = extend({}, window[pluginName].defaults, options);
+
+    /**
+     * Init
+     */
+    function init() {
+      if (!canvasSupport) { return; }
+
+      //Create canvas
+      canvas = document.createElement('canvas');
+      canvas.className = 'pg-canvas';
+      canvas.style.display = 'block';
+      element.insertBefore(canvas, element.firstChild);
+      ctx = canvas.getContext('2d');
+      styleCanvas();
+
+      // Create particles
+      var numParticles = Math.round((canvas.width * canvas.height) / options.density);
+      for (var i = 0; i < numParticles; i++) {
+        var p = new Particle();
+        p.setStackPos(i);
+        particles.push(p);
+      };
+
+      window.addEventListener('resize', function() {
+        resizeHandler();
+      }, false);
+
+      document.addEventListener('mousemove', function(e) {
+        mouseX = e.pageX;
+        mouseY = e.pageY;
+      }, false);
+
+      if (orientationSupport && !desktop) {
+        window.addEventListener('deviceorientation', function () {
+          tiltY = Math.min(Math.max(-event.beta, -30), 30);
+          tiltX = Math.min(Math.max(-event.gamma, -30), 30);
+        }, true);
+      }
+
+      draw();
+      hook('onInit');
+    }
+
+    function styleCanvas() {
+      canvas.width = element.offsetWidth;
+      canvas.height = element.offsetHeight;
+      ctx.fillStyle = options.dotColor;
+      ctx.strokeStyle = options.lineColor;
+      ctx.lineWidth = options.lineWidth;
+    }
+
+    function draw() {
+      if (!canvasSupport) { return; }
+
+      winW = window.innerWidth;
+      winH = window.innerHeight;
+
+      // Wipe canvas
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      // Update particle positions
+      for (var i = 0; i < particles.length; i++) {
+        particles[i].updatePosition();
+      };
+      // Draw particles
+      for (var i = 0; i < particles.length; i++) {
+        particles[i].draw();
+      };
+      if (!paused) {
+        raf = requestAnimationFrame(draw);
+      }
+    }
+
+
+    function resizeHandler() {
+      // Resize the canvas
+      styleCanvas();
+
+      var elWidth = element.offsetWidth;
+      var elHeight = element.offsetHeight;
+
+      for (var i = particles.length - 1; i >= 0; i--) {
+        if (particles[i].position.x > elWidth || particles[i].position.y > elHeight) {
+          particles.splice(i, 1);
+        }
+      };
+
+      // Adjust particle density
+      var numParticles = Math.round((canvas.width * canvas.height) / options.density);
+      if (numParticles > particles.length) {
+        while (numParticles > particles.length) {
+          var p = new Particle();
+          particles.push(p);
+        }
+      } else if (numParticles < particles.length) {
+        particles.splice(numParticles);
+      }
+
+      // Re-index particles
+      for (i = particles.length - 1; i >= 0; i--) {
+        particles[i].setStackPos(i);
+      };
+    }
+
+    /**
+     * Pause particle system
+     */
+    function pause() {
+      paused = true;
+    }
+
+    /**
+     * Start particle system
+     */
+    function start() {
+      paused = false;
+      draw();
+    }
+
+    /**
+     * Particle
+     */
+    function Particle() {
+      this.stackPos;
+      this.active = true;
+      this.layer = Math.ceil(Math.random() * 3);
+      this.parallaxOffsetX = 0;
+      this.parallaxOffsetY = 0;
+      // Initial particle position
+      this.position = {
+        x: Math.ceil(Math.random() * canvas.width),
+        y: Math.ceil(Math.random() * canvas.height)
+      }
+      // Random particle speed, within min and max values
+      this.speed = {}
+      switch (options.directionX) {
+        case 'left':
+          this.speed.x = +(-options.maxSpeedX + (Math.random() * options.maxSpeedX) - options.minSpeedX).toFixed(2);
+          break;
+        case 'right':
+          this.speed.x = +((Math.random() * options.maxSpeedX) + options.minSpeedX).toFixed(2);
+          break;
+        default:
+          this.speed.x = +((-options.maxSpeedX / 2) + (Math.random() * options.maxSpeedX)).toFixed(2);
+          this.speed.x += this.speed.x > 0 ? options.minSpeedX : -options.minSpeedX;
+          break;
+      }
+      switch (options.directionY) {
+        case 'up':
+          this.speed.y = +(-options.maxSpeedY + (Math.random() * options.maxSpeedY) - options.minSpeedY).toFixed(2);
+          break;
+        case 'down':
+          this.speed.y = +((Math.random() * options.maxSpeedY) + options.minSpeedY).toFixed(2);
+          break;
+        default:
+          this.speed.y = +((-options.maxSpeedY / 2) + (Math.random() * options.maxSpeedY)).toFixed(2);
+          this.speed.x += this.speed.y > 0 ? options.minSpeedY : -options.minSpeedY;
+          break;
+      }
+    }
+
+    /**
+     * Draw particle
+     */
+    Particle.prototype.draw = function() {
+      // Draw circle
+      ctx.beginPath();
+      ctx.arc(this.position.x + this.parallaxOffsetX, this.position.y + this.parallaxOffsetY, options.particleRadius / 2, 0, Math.PI * 2, true);
+      ctx.closePath();
+      ctx.fill();
+
+      ctx.beginPath();
+      for (var i = particles.length - 1; i > this.stackPos; i--) {
+        var p2 = particles[i];
+        var a = this.position.x - p2.position.x
+        var b = this.position.y - p2.position.y
+        var dist = Math.sqrt((a * a) + (b * b)).toFixed(2);
+
+        if (dist < options.proximity) {
+          ctx.moveTo(this.position.x + this.parallaxOffsetX, this.position.y + this.parallaxOffsetY);
+          if (options.curvedLines) {
+            ctx.quadraticCurveTo(Math.max(p2.position.x, p2.position.x), Math.min(p2.position.y, p2.position.y), p2.position.x + p2.parallaxOffsetX, p2.position.y + p2.parallaxOffsetY);
+          } else {
+            ctx.lineTo(p2.position.x + p2.parallaxOffsetX, p2.position.y + p2.parallaxOffsetY);
+          }
+        }
+      }
+      ctx.stroke();
+      ctx.closePath();
+    }
+
+    Particle.prototype.updatePosition = function() {
+      if (options.parallax) {
+        if (orientationSupport && !desktop) {
+
+          var ratioX = (winW - 0) / (30 - -30);
+          pointerX = (tiltX - -30) * ratioX + 0;
+          var ratioY = (winH - 0) / (30 - -30);
+          pointerY = (tiltY - -30) * ratioY + 0;
+        } else {
+          pointerX = mouseX;
+          pointerY = mouseY;
+        }
+        //  parallax offsets
+        this.parallaxTargX = (pointerX - (winW / 2)) / (options.parallaxMultiplier * this.layer);
+        this.parallaxOffsetX += (this.parallaxTargX - this.parallaxOffsetX) / 10; // Easing equation
+        this.parallaxTargY = (pointerY - (winH / 2)) / (options.parallaxMultiplier * this.layer);
+        this.parallaxOffsetY += (this.parallaxTargY - this.parallaxOffsetY) / 10; // Easing equation
+      }
+
+      var elWidth = element.offsetWidth;
+      var elHeight = element.offsetHeight;
+
+      switch (options.directionX) {
+        case 'left':
+          if (this.position.x + this.speed.x + this.parallaxOffsetX < 0) {
+            this.position.x = elWidth - this.parallaxOffsetX;
+          }
+          break;
+        case 'right':
+          if (this.position.x + this.speed.x + this.parallaxOffsetX > elWidth) {
+            this.position.x = 0 - this.parallaxOffsetX;
+          }
+          break;
+        default:
+          // If particle has reached edge of canvas, reverse its direction
+          if (this.position.x + this.speed.x + this.parallaxOffsetX > elWidth || this.position.x + this.speed.x + this.parallaxOffsetX < 0) {
+            this.speed.x = -this.speed.x;
+          }
+          break;
+      }
+
+      switch (options.directionY) {
+        case 'up':
+          if (this.position.y + this.speed.y + this.parallaxOffsetY < 0) {
+            this.position.y = elHeight - this.parallaxOffsetY;
+          }
+          break;
+        case 'down':
+          if (this.position.y + this.speed.y + this.parallaxOffsetY > elHeight) {
+            this.position.y = 0 - this.parallaxOffsetY;
+          }
+          break;
+        default:
+          // If particle has reached edge of canvas, reverse its direction
+          if (this.position.y + this.speed.y + this.parallaxOffsetY > elHeight || this.position.y + this.speed.y + this.parallaxOffsetY < 0) {
+            this.speed.y = -this.speed.y;
+          }
+          break;
+      }
+
+      // Move particle
+      this.position.x += this.speed.x;
+      this.position.y += this.speed.y;
+    }
+
+    /**
+     * Setter: particle stacking position
+     */
+    Particle.prototype.setStackPos = function(i) {
+      this.stackPos = i;
+    }
+
+    function option (key, val) {
+      if (val) {
+        options[key] = val;
+      } else {
+        return options[key];
+      }
+    }
+
+    function destroy() {
+      console.log('destroy');
+      canvas.parentNode.removeChild(canvas);
+      hook('onDestroy');
+      if ($) {
+        $(element).removeData('plugin_' + pluginName);
+      }
+    }
+
+    function hook(hookName) {
+      if (options[hookName] !== undefined) {
+        options[hookName].call(element);
+      }
+    }
+
+    init();
+
+    return {
+      option: option,
+      destroy: destroy,
+      start: start,
+      pause: pause
+    };
+  }
+
+  window[pluginName] = function(elem, options) {
+    return new Plugin(elem, options);
+  };
+
+  window[pluginName].defaults = {
+    minSpeedX: 0.1,
+    maxSpeedX: 0.7,
+    minSpeedY: 0.1,
+    maxSpeedY: 0.7,
+    directionX: 'center', // 'center', 'left' or 'right'. 'center' = dots bounce off edges
+    directionY: 'center', // 'center', 'up' or 'down'. 'center' = dots bounce off edges
+    density: 10000, // How many particles will be generated: one particle every n pixels
+    dotColor: '#666666',
+    lineColor: '#666666',
+    particleRadius: 7, // Dot size
+    lineWidth: 1,
+    curvedLines: false,
+    proximity: 100, // How close two dots need to be before they join
+    parallax: true,
+    parallaxMultiplier: 5, // The lower the number, the more extreme the parallax effect
+    onInit: function() {},
+    onDestroy: function() {}
+  };
+
+  // nothing wrong with hooking into jQuery if it's there...
+  if ($) {
+    $.fn[pluginName] = function(options) {
+      if (typeof arguments[0] === 'string') {
+        var methodName = arguments[0];
+        var args = Array.prototype.slice.call(arguments, 1);
+        var returnVal;
+        this.each(function() {
+          if ($.data(this, 'plugin_' + pluginName) && typeof $.data(this, 'plugin_' + pluginName)[methodName] === 'function') {
+            returnVal = $.data(this, 'plugin_' + pluginName)[methodName].apply(this, args);
+          }
+        });
+        if (returnVal !== undefined){
+          return returnVal;
+        } else {
+          return this;
+        }
+      } else if (typeof options === "object" || !options) {
+        return this.each(function() {
+          if (!$.data(this, 'plugin_' + pluginName)) {
+            $.data(this, 'plugin_' + pluginName, new Plugin(this, options));
+          }
+        });
+      }
+    };
+  }
+
+})(window, document);
+
+(function() {
+    var lastTime = 0;
+    var vendors = ['ms', 'moz', 'webkit', 'o'];
+    for(var x = 0; x < vendors.length && !window.requestAnimationFrame; ++x) {
+      window.requestAnimationFrame = window[vendors[x]+'RequestAnimationFrame'];
+      window.cancelAnimationFrame = window[vendors[x]+'CancelAnimationFrame']
+                                 || window[vendors[x]+'CancelRequestAnimationFrame'];
+    }
+
+    if (!window.requestAnimationFrame)
+      window.requestAnimationFrame = function(callback, element) {
+        var currTime = new Date().getTime();
+        var timeToCall = Math.max(0, 16 - (currTime - lastTime));
+        var id = window.setTimeout(function() { callback(currTime + timeToCall); },
+          timeToCall);
+        lastTime = currTime + timeToCall;
+        return id;
+      };
+
+    if (!window.cancelAnimationFrame)
+      window.cancelAnimationFrame = function(id) {
+        clearTimeout(id);
+      };
+}());
+
+  </script>
+
+     <div class="bread-bar">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-sm-6 col-xs-8">
+                        <ol class="breadcrumb">
+                            <li><a href="Home.html">Home</a></li>
+                            <li class="active">Data Solution</li>
+                        </ol>
+                    </div>
+                    <div class="col-md-4 col-sm-6 col-xs-4">
+                    </div>
+                </div>
+              </div>
+        </div>
+   
+</section>
+<body>
+<section style="background-color:cornflowerblue;background-image:url('images/number-2.jpg');color:white; opacity:75%;">
+</section>
+  <section>
+    <div class="container">
+        <div class="row">
+          <div class="col-md-3">
+            <h3>Gathering</h3>
+              <p> We build robust small scale to large enterprise applications along with onsite consulting support. It comprises of: <br><ul style="list-style-type:square;"><li>Web Scraping  
+                  </li><li>Turning all raw information input into analyzable data with profitable results</li></ul></p>
+          </div>
+          <div class="col-md-3">
+            <h3>Analytics</h3>
+            <p>Helping organizations get the most out of their data platforms including real time integration of AI, ML, predictive and real-time analytics.</p>
+          </div>
+          <div class="col-md-3">
+            <h3>Visualization</h3>
+            <p>We cover the following <br> - Executive Dashboards<br>-Graphs<br>-Heat Maps<br>-Sensitivity Modeling 
+              </p>
+          </div>
+          <div class="col-md-3">
+            <h3>Security</h3>
+            <p>Data is an important asset to any organization and thereby, it is essential to safeguard it from online criminals. Organizations across the globe are investing heavily in information technology (IT) to deploy the best of cyber defense capabilities.</p>
+          </div>
+        </div>
+      </section>
+<!-- Section Style  End -->
+<hr>
+<article class=" navbar navbar-default">
+<h3 class="pull-center">Our Partners</h3>
+<hr>
+	<section>
+    
+    <div class="row blog">
+      <div class="col-md-12">
+          <div id="blogCarousel" class="carousel slide" data-ride="carousel">
+              <div class="carousel-inner">
+
+                  <div class="carousel-item active">
+                      <div class="row">                               
+                          <div class="col-md-3 claud">
+                              <a href="https://www.addaxent.com/" target="_blank">
+                                  <img class="mediasliderimage" src="images/addax.png" alt="Addax Enterprise" style="max-width:100%;">
+                                  <div class="overlay">
+                                  <div class="text">Addax Enterprise</div>
+                                </div>
+                              </a>
+                          </div>
+                          <div class="col-md-3 claud">
+                              <a href="https://www.addaxent.com/gallery-2" target="_blank">
+                                  <img class="mediasliderimage" src="images/helens.png" alt="Helen's Project" style="max-width:100%;">
+                                  <div class="overlay">
+                                  <div class="text">Helen's Project</div>
+                                </div>
+                              </a>
+                          </div>
+                          <div class="col-md-3 claud">
+                             <a href="http://www.theblproject.com" target="_blank">
+                                  <img class="mediasliderimage" src="images/theblp.png" alt="Blacklemur Project" style="max-width:100%;">
+                                  <div class="overlay">
+                                  <div class="text">The BL Project</div>
+                                </div>
+                              </a>
+                          </div>
+                          <div class="col-md-3 claud">
+                              <a href="http://www.smittysclubhouse.com/index.html" target="_blank">
+                                  <img class="mediasliderimage" src="images/casade.png" alt="Casa De Smittys" style="max-width:100%;">
+                                  <div class="overlay">
+                                  <div class="text">Casa De Smitty's</div>
+                                </div>
+                              </a>
+                          </div>
+                      </div>
+                      <!--.row-->
+                  </div>
+                  <script>
+                    	$('#blogCarousel').carousel({
+				interval: 5000
+		});
+                  </script>
+                  
+  </section>
+</article>
+</body>
+
+<section style="width:100%;" class="w3-container">
+    <div class="d-block p-2 bg-dark text-white" style="width:100%;">
+      <div class=" text-center text-md-left mt-5">
+    
+        <!-- Grid row -->
+        <div class="row mt-3" >
+    
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+    
+            <!-- Content -->
+            <h6 class="text-uppercase font-weight-bold">Blacklemur Innovations</h6>
+            <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+            <p>A data and web solutions company that creates interactive web applications, imaginative designs and provide effective data solutions ranging from gathering, analysis, visualization to security.</p>
+    
+          </div>
+          <!-- Grid column -->
+    
+          <!-- Grid column -->
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+    
+            <!-- Links -->
+            <h6 class="text-uppercase font-weight-bold">WHAT WE DO</h6>
+            <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+            <p>
+              <a href="website-design.html" style="color:white;">WEBSITE DESIGN</a>
+            </p>
+            <p>
+              <a href="imagination-design.html" style="color:white;">IMAGINATIVE DESIGN</a>
+            </p>
+            <p>
+              <a href="imagination-design.html" style="color:white;">PHOTOGRAPHY</a>
+            </p>
+            <p>
+              <a href="data-solution.html" style="color:white;">DATA SOLUTION</a>
+            </p>
+    
+          </div>
+          <!-- Grid column -->
+    
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+    
+            <!-- Links -->
+            <h6 class="text-uppercase font-weight-bold">Useful links</h6>
+            <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+            <p>
+              <a href="About-us.html" style="color:#0071BC;">Founders</a>
+            </p>
+            <p>
+              <a href="Home.html" style="color:#0071BC;">Products</a>
+            </p>
+            <p>
+              <a href="recent-work.html" style="color:#0071BC;">Services</a>
+            </p>
+            <p>
+              <a href="Home.html"style="color:#0071BC;" >News</a>
+            </p>
+    
+          </div>
+          <!-- Grid column -->
+    
+          <!-- Grid column -->
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+    
+            <!-- Links -->
+            <h6 class="text-uppercase font-weight-bold">Contact</h6>
+            <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+            <p>
+              <i class="fas fa-home mr-3"></i> Dallas Texas, US</p>
+            <p>
+              <i class="fas fa-envelope mr-3"></i> info@blacklemur-innovations.com</p>
+            <p>
+              <i class="fas fa-phone mr-3"></i> + 263 777 883 513</p>
+    
+          </div>
+          <!-- Grid column -->
+    
+        </div>
+        <!-- Grid row -->
+    
+      </div>
+      <!-- Footer Links -->
+    <!-- Footer -->
+    </section>
+    <footer class="page-footer font-small unique-color-dark"Style="width:100%">
+    
+      <div style="background-color: #0071BC;width: 100%;">
+        <div class="container">
+    
+          <!-- Grid row-->
+          <div class="row py-4 d-flex align-items-center">
+    
+            <!-- Grid column -->
+            <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
+              <h6 class="mb-0" style="color:white;">Follow us on:</h6>
+            </div>
+            <!-- Grid column -->
+    
+            <!-- Grid column -->
+            <div class="col-md-6 col-lg-7 text-center text-md-right">
+    
+              <!-- Facebook -->
+              <a class="fb-ic" href="https://www.facebook.com/blacklemurs/" target="_blank">
+                  <i class='fab fa-facebook white-text mr-4' style="color:white;"></i>
+              </a>
+              <!-- Twitter -->
+              <a class="tw-ic" href="https://twitter.com/Blacklemurs1" target="_blank">
+                  <i class='fab fa-twitter white-text mr-4' style="color:white;"></i>
+              </a>
+              
+              <!--Instagram-->
+              <a class="ins-ic" href="https://www.instagram.com/blacklemurs/" target="_blank">
+                  <i class='fab fa-instagram white-text mr-4' style="color:white;"></i>
+              </a>
+    <!--Youtube-->
+              <a class="ins-ic" href="https://www.youtube.com/channel/UCBFF3Y9AHPDBdWy0bn3r_Gg?view_as=subscriber" target="_blank">
+                  <i class='fab fa-youtube white-text mr-4' style="color:white;"></i>
+              </a>
+    
+            </div>
+            <!-- Grid column -->
+    
+          </div>
+          <!-- Grid row-->
+    
+        </div>
+      </div>
+      </div>
+    
+      <!-- Footer Links -->
+      <!-- Copyright -->
+      <div class="footer-copyright text-center py-3"  style="background-color:black; color:white;">© 2019 Copyright Blacklemur Innovations: All Rights Reserved
+      </div>
+      <!-- Copyright -->
+    
+    </footer>
+    <!-- Footer -->
+    </article>
+</html>
