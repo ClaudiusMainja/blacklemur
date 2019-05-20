@@ -17,61 +17,64 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.css">
   <link rel="stylesheet" type="text/css" href="css/website-design.css">
 <link rel="stylesheet" type="text/css" href="style.css">
-<link rel="stylesheet" type="text/scss" href="style.scss">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <link rel="icon" type="images/blemurs.png" href="images/blemurs.png">
 </head>
-<header class="main-header" id="header">
-    <div class="bg-color">
-      <!--nav-->
-      <header>
-        <!---Header-->
-        
-              <!-- Navigation -->
-              <section>
-                <nav class="navbar navbar-expand-lg navbar-light bg-light top-fixed ">
-                      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="collapsingNavbar" aria-expanded="false" aria-label="Toggle navigation">
-                          <span class="navbar-toggler-icon"></span>
-                          <span class="icon-bar"></span>
-                          <span class="icon-bar"></span>
-                          <span class="icon-bar"></span>
-                      </button>
-                      <div class="collapse navbar-collapse" id="collapsingNavbar">
-                  <nav class="nav nav-tabs navbar fixed-top navbar-expand-md navbar-new-bottom p-3 mb-2 bg-white text-dark" style="height:15%;">
-                      <div class="navbar-collapse collapse" id="collapsingNavbar">
-                       
-                              <a href="Home.html"><img am-TopLogo alt="Blacklemur"  src="images/flying-logo.png" class="img-responsive logo."></a>
-                              <div class="collapse navbar-collapse navbar-menubuilder">
-                          <ul class=" nav navbar-nav nav justify-content-center navbar-nav mr-auto mt-2 mt-lg-0 navbar-nav w-100 justify-content-center px-3" style="color:white">
-                             
-                              <li class="nav-item active">
-                                  <a class="nav-link" href="Home.html" style="color:#000;">HOME</a>
-                              </li>
-                              <li class="nav-item">
-                                  <a class="nav-link" href="About-us.html" style="color:#000;">ABOUT US</a></a>
-                              </li>
-                              <li class="nav-item">
-                                  <a class="nav-link" href="website-design.html" style="color:#000;">WEBSITE DESIGN</a>
-                              </li>
-                              <li class="nav-item">
-                                  <a class="nav-link" href="imagination-design.html" style="color:#000;">IMAGINATION DESIGN</a>
-                              </li>
-                              <li class="nav-item">
-                                  <a class="nav-link" href="data-solution.html" style="color:#000;">DATA SOLUTION</a>
-                              </li>
-                              <li class="nav-item">
-                                  <a class="nav-link" href="recent-work.html" style="color:#000;">RECENT WORK</a>
-                              </li>
-                              <li class="nav-item">
-                                  <a class="nav-link" href="get-in-touch.html" style="color:#000;">GET IN TOUCH</a>
-                              </li>
-                          </ul>
-                      </div>
-                      </nav>
-                  </nav> 
-              </section>
+<header>
+<div id="wrapper" class="animate">
+    <nav class="navbar header-top fixed-top navbar-expand-lg  navbar-light p-3 mb-2 bg-white text-dark">
+ 
+      <a class="navbar-brand" href="Home.html"><img am-TopLogo alt="Blacklemur"  src="images/flying-logo.png" class="img-responsive logo."></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon">
+            <i class="fa fa-navicon"></i>
+        </span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarText">
+       
+        <ul class=" nav nav-tabs navbar-nav ml-md-auto d-md-flex nav navbar-nav nav justify-content-center navbar-nav mr-auto mt-2 mt-lg-0 navbar-nav w-100 justify-content-center px-3">
+          <li class="nav-item">
+            <a class="nav-link" href="Home.html" style="color:#000;">HOME
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="About-us.html" style="color:#000;">ABOUT US</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="website-design.html" style="color:#000;">WEBSITE DESIGN</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="imagination-design.html" style="color:#000;">IMAGINATION DESIGN</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="data-solution.html"style="color:#000;" >DATA SOLUTION</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="recent-work.html"style="color:#000;">RECENT WORK</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="get-in-touch.html" style="color:#000;">GET IN TOUCH</a>
+                  </li>
+        </ul>
+      </div>
+    </nav>
+    <script>
+    $( document ).ready(function() {
+     $('.leftmenutrigger').on('click', function(e) {
+     $('.side-nav').toggleClass("open");
+     e.preventDefault();
+    });
+});
+    </script>
           </header> 
+          <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+          <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+          <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.css">
 <section>
 <div style="background-image: url('images/design.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
   <div class="mask rgba-gradient align-items-center">
@@ -90,20 +93,12 @@
   </div>
 </div>
 </section>
-<div class="bread-bar">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8 col-sm-6 col-xs-8">
-                <ol class="breadcrumb">
-                    <li><a href="Home.html">Home</a></li>
-                    <li class="active">Imagination Design</li>
-                </ol>
-            </div>
-            <div class="col-md-4 col-sm-6 col-xs-4">
-            </div>
-        </div>
-      </div>
-</div>
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="Home.html">HOME</a></li>
+      <li class="breadcrumb-item active" aria-current="page">IMAGINATION DEISGN</li>
+    </ol>
+  </nav>
 <script>
     // Animations init
     new WOW().init();
